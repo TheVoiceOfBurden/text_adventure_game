@@ -151,7 +151,6 @@ class Trader(Character):
         else:
             print("HINT: "+self.hint)
 
-
 class Item():
     def __init__(self, name, description, use_text):
         self.name = name

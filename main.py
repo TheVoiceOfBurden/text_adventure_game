@@ -1,6 +1,6 @@
 from classes import Room, Lockbox, Item, Character, Inventory, Trader
 import os
-#TODO Implement, Add Friends, Finish Lockbox, change wrap text length
+#TODO Add Friends, Finish Lockbox
 
 map = Item(
     "map",
@@ -61,7 +61,8 @@ sticky = Item(
     'sticky note with some clues of it',
     '',
     '''You read your sticky note with the clues:
-1. I am the beginning of everything, the end of everywhere. I'm the beginning of eternity, the end of time & space. What am I?
+1. I am the beginning of everything, the end of everywhere. I'm the beginning of eternity, the end of time
+& space. What am I?
 2. I am the loneliest number.
 3. Check the clue number.
 4. Take a number. Double it. Add 21. Subtract 15. Divide by 2. Subtract your original number.
@@ -69,15 +70,18 @@ sticky = Item(
 )
 
 crowd = Character(
-    "A horde of lost nooglers (new googlers) surrounds you and asks how to get around.  Type 'use' to give them your map to help them out.",
+    """A horde of lost nooglers (new googlers) surrounds you and asks how to get around.  Type 'use' to give them your
+map to help them out.""",
     map,
-    "They gratefully accept the map.  Now that they know where to go they immediately leave. You, on the other hand, feel a bit lost.",
+    """They gratefully accept the map.  Now that they know where to go they immediately leave. You, on the other
+hand, feel a bit lost.""",
     "They will need something to help them get around."
     )
 dog = Character(
     "A cute robot dog paces back and forth, clearly guarding a door.",
     banana,
-    "The robot dog walks unknowingly towards the banana peel.  Its foot slips and its circuitry shuts down in response.  It lays on its side, happily wagging its robot tail.",
+    """The robot dog walks unknowingly towards the banana peel.  Its foot slips and its circuitry shuts down in response.  It
+lays on its side, happily wagging its robot tail.""",
     "The floor seems to have a lot of traction."
     )
 alligator = Character(
@@ -95,7 +99,8 @@ recall = Character(
 ghouls = Trader(
     "You are greeted by the ferocious twin ghouls of Precision and Recall.",
     sword,
-    "The sword strikes Precision and the magical incantation for luck bursts like a grenade of light through the ghoul.  Its twin laughs at your precise but harmless cuts.  Clearly you'll need another way of going after Recall.",
+    """The sword strikes Precision and the magical incantation for luck bursts like a grenade of light through the ghoul.  Its twin
+laughs at your precise but harmless cuts.  Clearly you'll need another way of going after Recall.""",
     "I might need something sharp and to the point.",
     None,
     recall
@@ -103,13 +108,15 @@ ghouls = Trader(
 engineer = Character(
     "You find a frustrated ground of engineers trying to solve a bug.",
     swatter,
-    "The screen shows static for a second and reverts back. The distraction allows an engineer to see something they didn't before. They fix the bug and answer your question about your missing buddy.",
+    """The screen shows static for a second and reverts back. The distraction allows an engineer to see something they
+didn't before. They fix the bug and answer your question about your missing buddy.""",
     "Find something used for eliminating bugs"
 )
 caffinated = Trader(
     "You land on a over caffeinated googler with a glass of water.",
     latte,
-    '''The over caffeinated googler gladly accepts your latte. "Thank you for the latte, I hear you are looking for your friend.  I'll only tell you this once."
+    '''The over caffeinated googler gladly accepts your latte. "Thank you for the latte, I hear you are looking for your
+friend.  I'll only tell you this once."
 
 1. I am the beginning of everything, the end of everywhere. I'm the beginning of eternity, the end of time and space. What am I?
 2. I am the loneliest number.
@@ -123,21 +130,26 @@ caffinated = Trader(
 grump = Trader(
     "You land on a over caffeinated googler with a glass of water and a grumpy engineer holding a latte.",
     diet_soda,
-    '"You found the last one!", the grumpy engineer no longer looks so frustrated and puts down the latte with a beautiful flower made out of foam for the diet soda.',
+    '''"You found the last one!", the grumpy engineer no longer looks so frustrated and puts down the latte with a beautiful flower
+made out of foam for the diet soda.''',
     "",
     latte,
     caffinated
 )
 vp = Trader(
-    "You land on a over caffeinated googler with a glass of water, a grumpy engineer holding a latte, and the vice president of some product you don't recognize with a diet coke in her hands.",
+    """You land on a over caffeinated googler with a glass of water, a grumpy engineer holding a latte, and the vice president of" \
+some product you don't recognize with a diet coke in her hands.""",
     quinoa,
-    "You suggest water and quinoa to the VP.  Her eyes clearly show you've taken away a moment of respite, but the truth of your statement convinces her to give up the diet soda.",
+    """You suggest water and quinoa to the VP.  Her eyes clearly show you've taken away a moment of respite, but the truth of
+your statement convinces her to give up the diet soda.""",
     "",
     diet_soda,
     grump
 )
 noogler = Trader(
-    "You land on a over caffeinated googler with a glass of water, a grumpy engineer holding a latte, the vice president of some product you don't recognize with a diet coke in her hands, and a happy noogler amazed that the micro-kitchen even offers quinoa.",
+    """You land on a over caffeinated googler with a glass of water, a grumpy engineer holding a latte, the vice president of some
+product you don't recognize with a diet coke in her hands, and a happy noogler amazed that the micro-kitchen even
+offers quinoa.""",
     banana_whole,
     "The noogler admits he doesn't even know what quinoa is and gratefully accepts your banana.",
     "",
@@ -145,7 +157,9 @@ noogler = Trader(
     vp
 )
 intern = Trader(
-    "You land on a over caffeinated googler with a glass of water, a grumpy engineer holding a latte, the vice president of some product you don't recognize with a diet coke in her hands, a happy noogler amazed that the micro-kitchen even offers quinoa, and an excited intern holding a banana.",
+    """You land on a over caffeinated googler with a glass of water, a grumpy engineer holding a latte, the vice president of some
+product you don't recognize with a diet coke in her hands, a happy noogler amazed that the micro-kitchen even offers
+quinoa, and an excited intern holding a banana.""",
     stickers,
     "The intern is so excited about the stickers she immediately gives you her banana.  You wonder what you can trade for this?",
     "You need something to trade.",
@@ -169,7 +183,8 @@ park = Room(
     locked = [True, crowd, "The mass of nooglers blocks you from moving along your way."]
 )
 campus = Room(
-    "The Google campus opens up before you.  Colorful lawn chairs greet your passage, and a building on your left hosts an image of your likeness and all of your friends."
+    """The Google campus opens up before you.  Colorful lawn chairs greet your passage, and a building on your left hosts an image
+of your likeness and all of your friends."""
 )
 vball = Room(
     "A T-rex skeleton towers over you and a beach volleyball court invites you to play."
@@ -220,7 +235,8 @@ mars2 = Room(
     item=sword
 )
 mars3 = Room(
-    "You are on the 3rd floor of the Mars building.  A graveyard of broken lava lamps sits in the middle of the floor.  A skybridge connects you to the other buildings."
+    """You are on the 3rd floor of the Mars building.  A graveyard of broken lava lamps sits in the middle of the floor.  A 
+skybridge connects you to the other buildings."""
 )
 strange = Room(
     "You find a strange hallway with clean rooms and signs with drawings of hazmat suits on them."
@@ -229,14 +245,16 @@ saturn2 = Room(
     "The 2nd floor of the Saturn building."
 )
 saturn3 = Room(
-    "You are on the 3rd floor of the Saturn building.  You see a table with various jigsaw puzzles half finished.  A skybridge connects you to a different building."
+    """You are on the 3rd floor of the Saturn building.  You see a table with various jigsaw puzzles half finished.  A skybridge 
+connects you to a different building."""
 )
 saturn4 = Room(
     "You are on the 4th floor.  A mural of a violent green wave in the ocean greets your entrance.",
     character=ghouls
 )
 river1 = Room(
-    "On your left you see a fake river comprised of rocks and on your right a piano. In fact, everything looks inviting except the elevators."
+    """On your left you see a fake river comprised of rocks and on your right a piano. In fact, everything looks inviting except
+the elevators."""
 )
 river2 = Room(
     "You are on the 2nd floor.  Cubicles as far as the eye can see."
